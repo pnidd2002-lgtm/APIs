@@ -1,0 +1,38 @@
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using test_api.Models;
+
+namespace test_api.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class Studentcontroller : ControllerBase
+    {
+        [HttpGet]
+        public List<Student> GetStudents()
+        {
+            List<Student> students = new List<Student>()
+            {
+                new Student
+                {
+                    Id=1,
+                    Name="pasindu",
+                    Age=23,
+                    Course="asp.net"
+
+                },
+                
+                new Student
+                {
+                    Id=2,
+                    Name="sehansa",
+                    Age=22,
+                    Course="asp.net"
+                    
+                }
+
+            };
+            return students;
+        }
+    }
+}
